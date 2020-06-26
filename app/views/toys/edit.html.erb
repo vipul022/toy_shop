@@ -1,0 +1,22 @@
+<h1>Edit A Toy</h1>
+
+<form action="<%= toy_path(@toy.id) %>" method="POST">
+
+ <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" /> 
+
+
+<input type="hidden" name="_method" value="patch" /> 
+
+    <label for="name">Name</label>
+    <input type="text" name="toy[name]" id="name" value="<%= @toy.name %>"   />
+
+    <label for="date">Date Created</label>
+    <input type="date"  name="toy[date]" id="date" value="<%= @toy.date %>"    />
+
+    <label for="user">User</label>
+    <input type="text"   name="toy[user]" id="user" value="<%= @toy.user %>"  />
+
+
+   <input type="submit" value="Update"/>
+
+</form> 

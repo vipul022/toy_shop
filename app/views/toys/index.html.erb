@@ -1,0 +1,19 @@
+<h1>Toys Shop</h1>
+
+  
+<div class="card-container">
+      <% @toys.each do |toy| %>
+      <div class="card">
+        
+          <h3>Name: <%=  toy.name %> </h3>
+          <h3>Date Created: <%= toy.date %> </h3>
+          <h3>User: <%= toy.user %>   </h3>
+        
+        
+          <%= link_to "Update", edit_toy_path(toy.id) %>
+          <%= link_to "Show", toy_path(toy.id) %>
+          <%= link_to "Delete", toy_path(toy.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        
+      </div>  
+        <% end %> 
+</div>  
